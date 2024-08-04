@@ -12,9 +12,6 @@ ollama pull llama3
 # Start the streamlit server, blocking exit
 echo "Starting the Streamlit server"
 
-
-# CMD [ "sh", "-c", "streamlit run --server.port ${PORT} --server.address ${HOST} /app/main.py" ]
-
 # streamlit run app.py --server.port=8501 --server.address=0.0.0.0
 
-# streamlit run --server.port ${PORT} --server.address ${HOST} /app/main.py
+streamlit run --server.port ${PORT} --server.address ${HOST} /app/main.py
