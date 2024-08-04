@@ -4,11 +4,29 @@ WORKDIR /app
 
 COPY requirements.txt requirements.txt
 
+
+
+# Install dependencies
+RUN apt-get update && \
+    apt-get install -y python3 python3-pip \
+                       pkg-config \
+                       libhdf5-dev
+
 RUN pip install -r requirements.txt
 
+# Copy application files
 COPY app .
 
+# Copy entrypoint.sh to /app
+COPY entrypoint.sh /app/entrypoint.sh
+
+
+# Make entrypoint.sh executable
+RUN chmod +x /app/entrypoint.sh
+
+# Set environment variables
 ENV PORT 8000
 ENV HOST 0.0.0.0
 
-ENTRYPOINT ["./entrypoint.sh"]
+# Use entrypoint.sh as the entry point
+ENTRYPOINT ["/app/entrypoint.sh"]
