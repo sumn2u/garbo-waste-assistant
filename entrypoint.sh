@@ -42,10 +42,6 @@ echo "Performing additional tasks..."
 # Wait for the Ollama server process to finish
 # wait $SERVER_PID
 
-# If needed, run any final commands or clean-up tasks
-echo "Ollama server has stopped. Performing final tasks..."
-
-
 # Start the streamlit server, blocking exit
 echo "Starting the Streamlit server"
 
