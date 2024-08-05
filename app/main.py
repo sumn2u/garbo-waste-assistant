@@ -10,6 +10,7 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 import logging
 import ast
+import time
 
 load_dotenv()
 
@@ -19,6 +20,7 @@ llm = Ollama(model="tinyllama")
 log = logging.getLogger(__name__)
 
 # Load Keras model
+# MODEL = tf.saved_model.load('app/mobilenet_model')
 MODEL = tf.saved_model.load('mobilenet_model')
 MODEL_SERVING_FUNCTION = MODEL.signatures['serving_default']
 
@@ -55,6 +57,7 @@ Meet **Garbo**, your friendly assistant for waste management and recycling.
 Together, we can make recycling easier and more effective. Let's get started!
 """)
 
+# chatbot_icon_path = "app/assets/garbo.jpeg" 
 chatbot_icon_path = "assets/garbo.jpeg"  # Replace with your icon URL
 
 def get_response(user_query, chat_history):
@@ -66,14 +69,18 @@ def get_response(user_query, chat_history):
 
     User question: {user_question}
     """
-    prompt = template.format(
-        chat_history="\n".join([msg.content for msg in chat_history]),
-        user_question=user_query
-    )
+    # prompt = template.format(
+    #     chat_history="\n".join([msg.content for msg in chat_history]),
+    #     user_question=user_query
+    # )
 
     # Invoke the Ollama model with the prompt
-    result = llm.invoke(prompt)
-    return result.strip()  # Ensure there's no leading or trailing whitespace
+    # result = llm.invoke(prompt)
+    # return result.strip()  # Ensure there's no leading or trailing whitespace
+    time.sleep(2) 
+    static_response = "We are currently developing our own waste management language model. Stay tuned for updates!"
+
+    return static_response.strip() 
 
 
 def run(input_data):
