@@ -55,7 +55,7 @@ Meet **Garbo**, your friendly assistant for waste management and recycling.
 Together, we can make recycling easier and more effective. Let's get started!
 """)
 
-chatbot_icon_path = "app/assets/garbo.jpeg"  # Replace with your icon URL
+chatbot_icon_path = "assets/garbo.jpeg"  # Replace with your icon URL
 
 def get_response(user_query, chat_history):
     # Create the prompt based on chat history and user query
