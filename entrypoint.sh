@@ -24,8 +24,9 @@ echo "Waiting for the server to start..."
 
 # Check if the model is already pulled; if not, pull it
 # if ! model_is_pulled; then
-echo "Model not found. Pulling the latest Llama3 model..."
-ollama pull llama3.1
+echo "Model not found. Pulling the latest tinyllama model..."
+
+ollama pull tinyllama
 # else
 #     echo "Model already pulled. Skipping pull."
 # fi
