@@ -18,9 +18,9 @@ RUN pip install -r /app/requirements.txt
 # Copy application files
 COPY app .
 
-COPY app/mobilenet_model /app/mobilenet_model
+COPY ./mobilenet_model /app/mobilenet_model
 
-COPY app/assets /app/assets
+COPY ./assets /app/assets
 
 # Copy entrypoint.sh to /app
 COPY entrypoint.sh /app/entrypoint.sh
