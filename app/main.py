@@ -19,7 +19,7 @@ llm = Ollama(model="tinyllama")
 log = logging.getLogger(__name__)
 
 # Load Keras model
-MODEL = tf.saved_model.load('app/mobilenet_model')
+MODEL = tf.saved_model.load('mobilenet_model')
 MODEL_SERVING_FUNCTION = MODEL.signatures['serving_default']
 
 # App config
