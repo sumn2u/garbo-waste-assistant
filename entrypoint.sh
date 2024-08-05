@@ -13,6 +13,8 @@ model_is_pulled() {
 # Start the Ollama server in the background
 ollama serve &
 
+echo "Sleeping for 5 seconds..."
+sleep 5
 # Get the PID of the Ollama server process
 # SERVER_PID=$!
 
