@@ -28,6 +28,7 @@ RUN chmod +x /app/entrypoint.sh
 ENV PORT 8000
 ENV HOST 0.0.0.0
 
+EXPOSE 11434
 
 # Use entrypoint.sh as the entry point
-ENTRYPOINT ["/usr/bin/bash", "/app/entrypoint.sh"]
+ENTRYPOINT ["/app/entrypoint.sh"]
