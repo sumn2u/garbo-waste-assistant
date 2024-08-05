@@ -18,7 +18,6 @@ RUN pip install -r /app/requirements.txt
 # Copy application files
 COPY app .
 
-COPY ./ollama/ollama /root/.ollama
 
 COPY ./mobilenet_model /app/mobilenet_model
 

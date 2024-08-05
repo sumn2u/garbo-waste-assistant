@@ -15,6 +15,7 @@ ollama serve &
 
 # Get the PID of the Ollama server process
 # SERVER_PID=$!
+sleep 5
 
 # Wait for a few seconds to ensure the server starts properly
 echo "Waiting for the server to start..."
@@ -23,6 +24,7 @@ echo "Waiting for the server to start..."
 # Check if the model is already pulled; if not, pull it
 # if ! model_is_pulled; then
 echo "Model not found. Pulling the latest Llama3 model..."
+
 ollama pull llama3.1
 # else
 #     echo "Model already pulled. Skipping pull."
