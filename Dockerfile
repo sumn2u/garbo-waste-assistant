@@ -20,7 +20,7 @@ COPY app .
 
 COPY ./mobilenet_model/ /app/mobilenet_model/
 
-COPY ./assets/ /app/assets/
+# COPY ./assets/ /app/assets/
 
 
 # Copy entrypoint.sh to /app
