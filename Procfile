@@ -1,1 +1,1 @@
-web: sh entrypoint.sh && streamlit run app/main.py
+web: /app/entrypoint.sh

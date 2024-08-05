@@ -10,4 +10,10 @@ services:
         ports:
             - ${PORT}:${PORT}
         volumes:
-            - ./app:/app
+            - .:/app
+            - ./ollama/ollama:/root/.ollama
+            - ./mobilenet_model:/app/mobilenet_model
+        container_name: ollama
+        pull_policy: always
+        tty: true
+        restart: always
