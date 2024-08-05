@@ -1,8 +1,8 @@
-FROM python:3.12-slim
+FROM ollama/ollama
 
 WORKDIR /app
 
-COPY requirements.txt requirements.txt
+COPY app/requirements.txt /app/requirements.txt
 
 
 
@@ -12,7 +12,7 @@ RUN apt-get update && \
                        pkg-config \
                        libhdf5-dev
 
-RUN pip install -r requirements.txt
+RUN pip install -r /app/requirements.txt
 
 # Copy application files
 COPY app .
@@ -28,5 +28,6 @@ RUN chmod +x /app/entrypoint.sh
 ENV PORT 8000
 ENV HOST 0.0.0.0
 
+
 # Use entrypoint.sh as the entry point
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["/usr/bin/bash", "/app/entrypoint.sh"]
